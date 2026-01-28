@@ -155,6 +155,7 @@ export function App() {
                 query={query}
                 setQuery={setQuery}
                 onRun={handleRunQuery}
+                onClose={activeTable ? () => setViewMode('browse') : undefined}
                 loading={isLoading}
                 className="h-full"
               />

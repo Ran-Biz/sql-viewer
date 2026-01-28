@@ -2,7 +2,7 @@
 
 A modern, high-performance SQL Viewer and Editor built with **Bun**, **React**, and **TailwindCSS**. It provides a robust interface for managing SQLite databases, importing SQL files, and exploring data with ease.
 
-![SQL Viewer](https://placehold.co/600x400?text=SQL+Viewer+Preview)
+![SQL Viewer](screenshot.png)
 
 ## Features
 

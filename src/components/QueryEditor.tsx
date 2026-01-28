@@ -5,11 +5,12 @@ interface QueryEditorProps {
     query: string;
     setQuery: (query: string) => void;
     onRun: () => void;
+    onClose?: () => void;
     loading?: boolean;
     className?: string;
 }
 
-export function QueryEditor({ query, setQuery, onRun, loading, className }: QueryEditorProps) {
+export function QueryEditor({ query, setQuery, onRun, onClose, loading, className }: QueryEditorProps) {
     return (
         <div className={cn("flex flex-col bg-black/20 backdrop-blur-xl border-b border-white/10", className)}>
             <div className="flex items-center justify-between p-3 border-b border-white/5">
@@ -22,6 +23,15 @@ export function QueryEditor({ query, setQuery, onRun, loading, className }: Quer
                     <span className="text-xs text-white/30 font-mono ml-2">query.sql</span>
                 </div>
                 <div className="flex gap-2">
+                    {onClose && (
+                        <button
+                            onClick={onClose}
+                            className="p-2 text-white/40 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                            title="Close Editor"
+                        >
+                            <span className="text-xs font-semibold">✕</span>
+                        </button>
+                    )}
                     <button
                         onClick={() => setQuery("")}
                         className="p-2 text-white/40 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
